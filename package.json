@@ -1,0 +1,32 @@
+{
+  "name": "mindtemple",
+  "version": "0.0.1",
+  "description": "Your knowledge, rendered as a world you can walk through.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vajramatt/mindtempleapp.git"
+  },
+  "keywords": ["knowledge", "visualization", "canvas", "pixel-art", "mempalace"],
+  "author": "Matthew Williamson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vajramatt/mindtempleapp/issues"
+  },
+  "homepage": "https://mindtemple.app",
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.5",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.8"
+  },
+  "dependencies": {
+    "preact": "^10.29.1"
+  }
+}

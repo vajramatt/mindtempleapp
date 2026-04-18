@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>MindTemple — Your knowledge, rendered as a world you can walk through.</title>
+    <meta name="description" content="An open-source browser app that renders your personal knowledge as a living 2D pixel world. Notes become terrain. Ideas become structures. A temple emerges." />
+    <meta property="og:title" content="MindTemple" />
+    <meta property="og:description" content="Your knowledge, rendered as a world you can walk through." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --gold: #f6c453;
+        --bone: #ece5d0;
+        --deep: #0b0a14;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: var(--deep); }
+      body {
+        font-family: 'Silkscreen', ui-monospace, monospace;
+        color: var(--bone);
+        image-rendering: pixelated;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      #app { width: 100vw; height: 100vh; position: relative; }
+      canvas#world {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        display: block;
+        cursor: grab;
+      }
+      canvas#world:active { cursor: grabbing; }
+      .hud {
+        position: absolute; top: 12px; left: 14px;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 14px;
+        color: var(--gold);
+        text-shadow: 0 0 8px rgba(246, 196, 83, 0.45), 0 2px 0 #000;
+        pointer-events: none;
+        letter-spacing: 0.04em;
+      }
+      .hud .sub {
+        display: block; margin-top: 6px;
+        font-family: 'Silkscreen', monospace;
+        font-size: 10px;
+        color: var(--bone);
+        text-shadow: 0 1px 0 #000;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="world"></canvas>
+      <div class="hud">
+        MINDTEMPLE
+        <span class="sub">your knowledge, rendered as a world you can walk through</span>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
